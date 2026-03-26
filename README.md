@@ -1,6 +1,6 @@
-ENTER YOUR NAME: Pavithra S
-ENTER YOUR REGISTER NO: 212223220072
-EX. NO.1
+# ENTER YOUR NAME: Pavithra S
+# ENTER YOUR REGISTER NO: 212223220072
+# EX. NO.1
 
 ##  ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
