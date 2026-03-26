@@ -1,8 +1,8 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
-<H3>EX. NO.1</H3>
-<H3>DATE</H3>
-<H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
+ENTER YOUR NAME: Pavithra S
+ENTER YOUR REGISTER NO: 212223220072
+EX. NO.1
+
+##  ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
 
@@ -37,14 +37,82 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+
+data = pd.read_csv("Churn_Modelling.csv")
+data
+data.head()
+
+X=data.iloc[:,:-1].values
+X
+
+y=data.iloc[:,-1].values
+y
+
+data.isnull().sum()
+
+data.duplicated()
+
+data.describe()
+
+data = data.drop(['Surname', 'Geography','Gender'], axis=1)
+data.head()
+
+scaler=MinMaxScaler()
+df1=pd.DataFrame(scaler.fit_transform(data))
+print(df1)
+
+X_train ,X_test ,y_train,y_test=train_test_split(X,y,test_size=0.2)
+
+X_train
+
+X_test
+
+print("Lenght of X_test ",len(X_test))
+
+
 
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+Dataset:
+
+<img width="1277" height="468" alt="478358067-b21fcf7a-f057-4c2e-accd-d4e61b46a4d8" src="https://github.com/user-attachments/assets/ec7c9138-89c4-4e76-bbc9-726b7c6298c0" />
+
+X Values:
+<img width="726" height="178" alt="478358285-e2ffd970-6256-43da-97af-d1ddde17c21c" src="https://github.com/user-attachments/assets/aafe69aa-ce69-4319-9c76-eaef0aefe568" />
+
+Y Values:
+<img width="670" height="60" alt="478358620-99b54178-6c44-43bf-94b0-c8a2d50aacf9" src="https://github.com/user-attachments/assets/2faab319-43dd-47df-96e4-28c7ae9cd1cd" />
+
+Null Values:
+<img width="315" height="339" alt="478358764-b67c1c75-ef32-4107-b885-461f45ec9b55" src="https://github.com/user-attachments/assets/3f596b1b-1440-482f-8fca-29c4cc008fbe" />
+
+Duplicated Values:
+
+<img width="372" height="284" alt="478358983-8f1a8de2-5747-4525-a13d-c1493c94ecb8" src="https://github.com/user-attachments/assets/5db4953c-f26b-4207-ad23-689e4cf131fb" />
+
+Description:
+<img width="799" height="599" alt="478359581-85b6c9c4-d4f2-4548-9c6e-8f36c4f48a9d" src="https://github.com/user-attachments/assets/fff31ed7-e3e2-4ee4-9c5e-35eecd8bc517" />
+
+Normalized Dataset:
+
+<img width="799" height="599" alt="478359581-85b6c9c4-d4f2-4548-9c6e-8f36c4f48a9d" src="https://github.com/user-attachments/assets/4c738c00-67e8-41e1-a3c9-698b13ecb23b" />
+
+Training Data:
+
+<img width="766" height="172" alt="478359685-afa3e758-458b-4081-ae46-6b680aa3ab6b" src="https://github.com/user-attachments/assets/c6e46abd-f14a-40eb-b525-c2fcfd745b2f" />
+
+Testing Data:
+<img width="819" height="175" alt="478359885-3b5258fb-0bd0-4ab0-bbc4-3e804cc94f2a" src="https://github.com/user-attachments/assets/cd67c037-3c00-48cb-9e77-af334f897d7f" />
+<img width="222" height="33" alt="478360913-0d9aad6b-e24e-4b7b-b901-f4f3c84a8895" src="https://github.com/user-attachments/assets/0c7745d7-c40b-4332-8b6a-dc06f113b49f" />
 
 
 ## RESULT:
 Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
+
 
 
